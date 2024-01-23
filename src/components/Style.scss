@@ -1,0 +1,727 @@
+$mobile-screen: 400px;
+$tablet-screen: 750px;
+$laptop-screen: 1024px;
+
+@mixin mobile {
+    @media screen and (max-width: 450px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media screen and (min-width:450px) and (max-width:1024px) {
+        @content;
+    }
+}
+@mixin laptop {
+    @media screen and (min-width:1024px) and (max-width:1700px) {
+        @content;
+    }
+}
+
+.Navbar {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include mobile(){  
+        height: 60px;
+    }
+    .nav-container {
+        border: 2px solid #6d6875 ;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 60%;
+        height: 70px;
+        background-color: #84a59d;
+        padding: 20px;
+        border-radius: 20px;
+        @include mobile(){
+            width: 100%;
+            height: 60px;
+            border-radius: 0 0 10px 10px;
+            padding: 10px;
+        }
+        .logo {
+            color: white;
+            @include mobile(){
+                font-size: 16px;
+            }
+        }
+        .search {
+            display: flex;
+            align-items: stretch;
+            height: 40px;
+            @include mobile(){
+             height: 30px;   
+            }
+            input {
+                background-color: #ff9770;
+                color: white;
+                width: 200px;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+                border: 1px solid white;
+                padding: 10px;
+                font-size: 15px;
+                transition: all 0.2s ease-in-out;
+                @include mobile(){
+                    width: 150px;
+                    font-size: 12px;
+                }
+                &::placeholder {
+                color: white;
+                }      
+                &:focus {
+                    width: 250px;
+                    font-size: 17px;
+                    background-color: #fb7e50;
+                    @include mobile(){
+                        width: 170px;
+                        font-size: 13px;
+                    }
+                }   
+            }
+            button {
+                width: 50px;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                background-color: #8479d5;
+                border: 1px solid white;
+                border-left: none;
+                cursor: pointer;
+                transition: all 0.2s ease-in-out;
+                @include mobile(){
+                    width: 40px;
+                }
+                svg {
+                    transition: all 0.1s ease-in-out;
+                    fill: white;
+                    @include mobile(){
+                        width: 13px;
+                        height: 13px;
+                    }
+                }
+                &:hover {
+                    background-color: #6e60d7;
+                    svg {
+                        height: 17px;
+                        width: 17px;
+                        @include mobile(){
+                            width: 14px;
+                            height: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.Contacts {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .addContact-btn {
+        margin-bottom: 70px;
+        @include mobile(){
+            margin-top: 20px;  
+            margin-bottom: 100px;      
+        }
+        button{
+            background-color: #9f86c0;
+            border: 2px solid #6d6875;
+            padding: 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            svg {
+                fill: white;
+                @include mobile(){
+                    width: 20px;
+                    height: 20px;       
+                }
+            }
+            &:hover {
+                background-color: #9072b7;
+            }
+        }
+    }
+    .contacts-container {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 35px;
+        @include mobile(){
+            width: 100%;
+            gap: 0;
+            align-items: center;
+            justify-content: center;
+        }
+        .Contact {
+            width: 250px;
+            height: 250px;
+            border: 2px solid #6d6875;
+            border-radius: 10px;
+            display: flex;
+            justify-content: start;
+            flex-direction: column;
+            margin-bottom: 7rem;
+            @include mobile(){
+                width: 250px;
+                height: 250px;
+            }
+            .contact-profile {
+                position: relative;
+                bottom: 50px;
+                left: 75px;
+                height: 100px;
+                width: 100px;
+                border: 2px solid #6d6875;
+                border-radius: 50px;
+                overflow: hidden;
+                @include mobile(){
+                    bottom: 45px;
+                    left: 85px;
+                    width: 75px;
+                    height: 75px;
+                }
+                img {
+                    height: 100px;
+                    width: 100px;
+                    @include mobile(){
+                        width: 75px;
+                        height: 75px;
+                    }
+                }
+            }
+            .contact-info {
+                text-align: start;
+                margin: 0 0.5rem;
+                color: white;
+                .spn-title {
+                    color: #6d6875;
+                }
+                span {
+                    font-size: 16px;
+                    @include mobile(){
+                        font-size: 15px;
+                    }
+                }
+            }
+            .contact-button {
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                position: relative;
+                top: 55px;
+                @include mobile(){
+                    top: 85px;       
+                }
+                button{
+                padding: 7px;
+                border: 2px solid #6d6875;
+                border-radius: 50%;
+                cursor: pointer;
+                @include mobile(){
+                    padding: 7px;
+                    border-width: 1px;       
+                }
+                svg {
+                    @include mobile(){
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+                }
+                .view-contact-btn {
+                    background-color: #a2d2ff;
+                    &:hover {
+                        background-color: #70baff;
+                    }
+                }
+                .edit-contact-btn {
+                    background-color: #cdb4db;
+                    &:hover {
+                        background-color: #b975e0;
+                    }
+                }
+                
+                .delete-contact-btn {
+                    background-color: #f28482;
+                    &:hover {
+                        background-color: #f1504d;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.Spinner {
+    @keyframes spinnerAnimation {
+        0% { transform: scale(1.3) }
+        100% { transform: scale(1) }
+    }
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .spinnerContainer {
+        width: 120px;
+        height: 120px;
+        display: inline-block;
+        overflow: hidden;
+        .spinner-divs div {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            top: 13px;
+            left: 13px;
+            background: #0fa3b1;
+            animation: spinnerAnimation .8s cubic-bezier(0,0.5,0.5,1) infinite;
+            animation-delay: -0.3s;
+        }
+        .spinner-divs div:nth-child(2) {
+            top: 13px;
+            left: 65px;
+            background: #f28482;
+            animation-delay: -0.2s;
+        }
+        .spinner-divs div:nth-child(3) {
+            top: 65px;
+            left: 13px;
+            background: #70baff;
+            animation-delay: 0s;
+        }
+        .spinner-divs div:nth-child(4) {
+            top: 65px;
+            left: 65px;
+            background: #ee964b;
+            animation-delay: -0.1s;
+        }
+        .spinner-divs {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform: translateZ(0) scale(1);
+            backface-visibility: hidden;
+            transform-origin: 0 0;
+        }
+        .spinner-divs div { 
+            box-sizing: content-box; 
+        }
+    }
+}
+
+.AddContact, .EditContact {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .addContact-gif {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 100px;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px;
+        @include mobile(){
+         display: none;               
+        }
+        h1 {
+            color: #006d77;
+            border-bottom: #006d77 1px solid;
+            width: 220px;
+        }
+        img {
+            width: 600px;
+            height: 400px;
+        }
+    }
+    .form {
+        display: flex;
+        flex: 2;
+        align-items: center;
+        justify-content: center;  
+        form {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            width: 50%;
+            gap: 15px;
+            @include mobile(){
+                width: 90%; 
+                flex-direction: column;
+                height: 100vh;        
+                padding: 25px 0 0 10px;
+            }
+            .inputs {
+                display: flex;
+                align-items: start;
+                justify-content: start;
+                flex-direction: column;
+                width: 100%;
+                gap: 15px;
+                @include mobile(){
+                    gap: 10px;       
+                }
+                .error {
+                    font-size: 11px;
+                    color: red;
+                }
+                .length-counter {
+                    font-size: 10px;
+                    display: inline-block;
+                    visibility: hidden;
+                    width: 40px;
+                    span {
+                        color: red;
+                        fill: red;
+                    }
+                }
+                label {
+                    display: block;
+                    font-size: 15px;
+                    color: #006d77;
+                    text-align: start;
+                    span {
+                        color: #ef233c;
+                    }
+                }
+                @keyframes shake {
+                    10%, 90% {
+                      transform: translate3d(-1px, 0, 0);
+                    }
+                    
+                    20%, 80% {
+                      transform: translate3d(2px, 0, 0);
+                    }
+                  
+                    30%, 50%, 70% {
+                      transform: translate3d(-4px, 0, 0);
+                    }
+                  
+                    40%, 60% {
+                      transform: translate3d(4px, 0, 0);
+                    }
+                  }
+                .inputError {
+                    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+                    transform: translate3d(0, 0, 0);
+                    backface-visibility: hidden;
+                    perspective: 1000px;
+                }
+                input , select {
+                    width: 20rem;
+                    height: 35px;
+                    border: none;
+                    outline: unset;
+                    border-radius: 10px;
+                    padding: 5px 7px;
+                    font-size: 15px;
+                    color: white;
+                    &::placeholder {
+                        color: rgba(255, 255, 255, 0.622);
+                        font-size: 12px;
+                    }      
+                }
+                input[name = name] {
+                    background-color: #87c38f;
+                    border: 2px solid #6d6875;
+                    &:focus {
+                        box-shadow: 0 0 5px 1px #87c38f;
+                    }
+                }
+                input[name = family] {
+                    background-color: #a2d2ff;
+                    border: 2px solid #6d6875;
+                    &:focus {
+                        box-shadow: 0 0 5px 1px #a2d2ff;
+                    }
+                }
+                input[name = email] {
+                    background-color: #ffafcc;
+                    border: 2px solid #6d6875;
+                    &:focus {
+                        box-shadow: 0 0 5px 1px #ffafcc;
+                    }
+                }
+                input[name = phone] {
+                    background-color: #ffd166;
+                    border: 2px solid #6d6875;
+                    &:focus {
+                        box-shadow: 0 0 5px 1px #ffd166;
+                    }
+                }
+                input[name = address] {
+                    background-color: #cdb4db;
+                    border: 2px solid #6d6875;
+                    &:focus {
+                        box-shadow: 0 0 5px 1px #cdb4db;
+                    }
+                }
+                input[name = about] {
+                    background-color: #c9ada7;
+                    border: 2px solid #6d6875;
+                    &:focus {
+                        box-shadow: 0 0 5px 1px #c9ada7;
+                    }
+                }
+                select[name = relation] {
+                    background-color: #b08968;
+                    border: 2px solid #6d6875;
+                    color: rgba(255, 255, 255, 0.622);
+                    font-size: 12px;
+                    &:focus {
+                        box-shadow: 0 0 5px 1px #b08968;
+                        font-size: 15px !important;
+                        @include mobile(){
+                            font-size: 10px;
+                        }
+                    }
+                    
+                }
+                select[name = sex] {
+                    background-color: #2ec4b6;
+                    border: 2px solid #6d6875;
+                    color: rgba(255, 255, 255, 0.622);
+                    font-size: 12px;
+                    &:focus {
+                        box-shadow: 0 0 5px 1px #2ec4b6;
+                        font-size: 15px !important;
+                        @include mobile(){
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+            .create-back-btn {
+                display: flex;
+                flex-direction: column;
+                gap: 60px;
+                @include mobile(){
+                    gap: 30px;
+                    padding-top: 30px;       
+                }
+            .create-btn {
+                width: 70px;
+                height: 70px;
+                border: 2px solid #6d6875;
+                border-radius: 50%;
+                background-color: #457b9d;
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+                transition: all 0.2s ease-in-out;
+                &:hover {
+                    background-color: #26678f;
+                }
+                }
+                .back-btn {
+                    font-size: 14px;
+                    text-decoration: underline;
+                    color: #e76f51;
+                    cursor: pointer;
+                    transition: all 0.2s ease-in-out;
+                    &:hover {
+                        color: #d33a14;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.PopUp {
+    width: 15%;
+    height: 50px;
+    background-color: #87c38f;
+    color: white;
+    padding-top: 5px;
+    border-radius: 10px;
+    font-size: 15px;
+    position: fixed;
+    z-index: 5000;
+    top: 15px;
+    left: 15px;
+    @include mobile(){
+        width: 50%;
+        height: 40px;
+        font-size: 13px;    
+        top: 60px;
+        left: 3px;
+
+    }
+    .container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .timer {
+            width: 100%;
+            height: 5px;
+            background-color: #0fa3b1;
+            border-radius: 20px;
+        }
+    }
+}
+
+.ViewContact {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    .container {
+        width: 70%;
+        height: 65%;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 3px solid #6d6875;
+        align-items: center;
+        @include mobile(){
+            width: 90%;  
+        }
+        .contactInfo {
+            max-height: 70%;
+            display: flex;
+            align-items: center;
+            @include mobile(){
+                flex-direction: column;  
+                gap: 15px;         
+            }
+            .side1, .side2 {
+                width: 500px;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                @include mobile(){
+                    width: 100%;       
+                }
+                div {
+                    text-align: start;
+                    span {
+                        font-size: 17px;
+                        @include mobile(){
+                            font-size: 15px;
+                        }
+                    }
+                    .infoTitle {
+                        color: #6d6875;
+                    }
+                    .infoValue {
+                        color: white
+                    }
+                }
+            }
+        }
+        .contactImage {
+            position: relative;
+            bottom: 100px;
+            margin-top: -100px;
+            @include mobile(){
+                bottom: 80px;           
+            }
+            img {
+                width: 200px;
+                height: 200px;
+                border-radius: 20px;
+                box-shadow: #6d6875 0 0 10px 1px;
+                @include mobile(){
+                    width: 100px;
+                    height: 100px;       
+                }
+            }
+        }
+    }
+    .backBtn {
+        margin-top: 20px;
+        button {
+            background-color: unset;
+            font-size: 15px;
+            color: red;
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.DeleteContact {
+    .container {
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+        height: 100vh;
+        background-color: #ffffff72;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .alert {
+            width: 500px;
+            height: 300px;
+            background-color: #d5bdaf;
+            border-radius: 20px;
+            border: #6d6875 2px solid;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 50px;
+            @include mobile(){
+                width: 250px;
+                height: 150px;
+            }
+            .title {
+                h1 {
+                    color: #494451;
+                    @include mobile(){
+                        font-size: 13px;   
+                    }
+                }
+            }
+            .btns {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                button {
+                    width: 70px;
+                    height: 40px;
+                    border: 1px solid #6d6875;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 13px;
+                    @include mobile(){
+                        width: 50px;
+                        height: 30px;   
+                    }
+                }
+                .deleteBtn {
+                    background-color: #e63946;
+                    &:hover {
+                        background-color: #e02434;
+                    }
+                }
+                .cancleBtn {
+                    background-color: #a1c181;
+                    &:hover {
+                        background-color: #93cc5b;
+                    }
+                }
+            }
+        }
+    }
+}

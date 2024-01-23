@@ -1,0 +1,23 @@
+.App {
+  width: 100%;
+  text-align: center;
+  background-color: #fff0f3;
+  min-height: 100vh;
+}
+
+*{
+  font-family: cursive;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+button{
+  border: unset;
+  font-family: cursive;
+}
+
+input {
+  border: none;
+  outline: none;
+}

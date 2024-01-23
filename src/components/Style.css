@@ -1,0 +1,418 @@
+.Navbar {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+.Navbar .nav-container {
+  border: 2px solid #6d6875;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  height: 70px;
+  background-color: #84a59d;
+  padding: 20px;
+  border-radius: 20px;
+}
+.Navbar .nav-container .logo {
+  color: white;
+}
+.Navbar .nav-container .search {
+  display: flex;
+  align-items: stretch;
+  height: 40px;
+}
+.Navbar .nav-container .search input {
+  background-color: #e07a5f;
+  color: white;
+  width: 200px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: 1px solid white;
+  padding: 10px;
+  font-size: 15px;
+  transition: all 0.3s ease-in-out;
+}
+.Navbar .nav-container .search input::-moz-placeholder {
+  color: white;
+}
+.Navbar .nav-container .search input::placeholder {
+  color: white;
+}
+.Navbar .nav-container .search input:focus {
+  width: 250px;
+  font-size: 17px;
+  background-color: #e76f51;
+}
+.Navbar .nav-container .search button {
+  width: 50px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #457b9d;
+  border: 1px solid white;
+  border-left: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.Navbar .nav-container .search button svg {
+  transition: all 0.2s ease-in-out;
+  fill: white;
+}
+.Navbar .nav-container .search button:hover {
+  background-color: #4a7d9d;
+}
+.Navbar .nav-container .search button:hover svg {
+  height: 17px;
+  width: 17px;
+}
+
+.Contacts {
+  width: 100%;
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.Contacts .addContact-btn {
+  margin-bottom: 70px;
+}
+.Contacts .addContact-btn button {
+  background-color: #9f86c0;
+  border: 2px solid #6d6875;
+  padding: 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.Contacts .addContact-btn button svg {
+  fill: white;
+}
+.Contacts .addContact-btn button:hover {
+  background-color: #9072b7;
+}
+.Contacts .contacts-container {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+}
+.Contacts .contacts-container .Contact {
+  width: 250px;
+  height: 250px;
+  border: 2px solid #6d6875;
+  border-radius: 10px;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  margin-bottom: 7rem;
+}
+.Contacts .contacts-container .Contact.female-contact {
+  background-color: #ff96bd;
+}
+.Contacts .contacts-container .Contact.male-contact {
+  background-color: #7bbfff;
+}
+.Contacts .contacts-container .Contact.other-contact {
+  background-color: #e5a86c;
+}
+.Contacts .contacts-container .Contact .contact-profile {
+  position: relative;
+  bottom: 50px;
+  left: 75px;
+  height: 100px;
+  width: 100px;
+  border: 2px solid #6d6875;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.Contacts .contacts-container .Contact .contact-profile img {
+  height: 100px;
+  width: 100px;
+}
+.Contacts .contacts-container .Contact .contact-info {
+  text-align: start;
+  margin: 0 0.5rem;
+  color: #006d77;
+}
+.Contacts .contacts-container .Contact .contact-info .spn-title {
+  color: white;
+}
+.Contacts .contacts-container .Contact .contact-info span {
+  font-size: 16px;
+}
+.Contacts .contacts-container .Contact .contact-button {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  position: relative;
+  top: 30px;
+}
+.Contacts .contacts-container .Contact .contact-button button {
+  padding: 7px;
+  border: 2px solid #6d6875;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.Contacts .contacts-container .Contact .contact-button .view-contact-btn {
+  background-color: #a2d2ff;
+}
+.Contacts .contacts-container .Contact .contact-button .view-contact-btn:hover {
+  background-color: #70baff;
+}
+.Contacts .contacts-container .Contact .contact-button .edit-contact-btn {
+  background-color: #cdb4db;
+}
+.Contacts .contacts-container .Contact .contact-button .edit-contact-btn:hover {
+  background-color: #b975e0;
+}
+.Contacts .contacts-container .Contact .contact-button .delete-contact-btn {
+  background-color: #f28482;
+}
+.Contacts .contacts-container .Contact .contact-button .delete-contact-btn:hover {
+  background-color: #f1504d;
+}
+
+.Spinner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes spinnerAnimation {
+  0% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.Spinner .spinnerContainer {
+  width: 120px;
+  height: 120px;
+  display: inline-block;
+  overflow: hidden;
+}
+.Spinner .spinnerContainer .spinner-divs div {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  top: 13px;
+  left: 13px;
+  background: #0fa3b1;
+  animation: spinnerAnimation 0.8s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  animation-delay: -0.3s;
+}
+.Spinner .spinnerContainer .spinner-divs div:nth-child(2) {
+  top: 13px;
+  left: 65px;
+  background: #f28482;
+  animation-delay: -0.2s;
+}
+.Spinner .spinnerContainer .spinner-divs div:nth-child(3) {
+  top: 65px;
+  left: 13px;
+  background: #70baff;
+  animation-delay: 0s;
+}
+.Spinner .spinnerContainer .spinner-divs div:nth-child(4) {
+  top: 65px;
+  left: 65px;
+  background: #ee964b;
+  animation-delay: -0.1s;
+}
+.Spinner .spinnerContainer .spinner-divs {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0;
+}
+.Spinner .spinnerContainer .spinner-divs div {
+  box-sizing: content-box;
+}
+
+.AddContact {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.AddContact .addContact-gif {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+.AddContact .addContact-gif h1 {
+  color: #006d77;
+  border-bottom: #006d77 1px solid;
+  width: 220px;
+}
+.AddContact .addContact-gif img {
+  width: 600px;
+  height: 400px;
+}
+.AddContact .form {
+  display: flex;
+  flex: 2;
+  align-items: center;
+  justify-content: center;
+}
+.AddContact .form form {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 50%;
+  gap: 15px;
+}
+.AddContact .form form .inputs {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+}
+.AddContact .form form .inputs .error {
+  font-size: 11px;
+  color: red;
+}
+.AddContact .form form .inputs .length-counter {
+  font-size: 10px;
+  display: inline-block;
+  visibility: hidden;
+  width: 40px;
+}
+.AddContact .form form .inputs .length-counter span {
+  color: red;
+  fill: red;
+}
+.AddContact .form form .inputs label {
+  display: block;
+  font-size: 15px;
+  color: #006d77;
+  text-align: start;
+}
+.AddContact .form form .inputs label span {
+  color: #ef233c;
+}
+.AddContact .form form .inputs input, .AddContact .form form .inputs select {
+  width: 20rem;
+  height: 35px;
+  border: none;
+  outline: unset;
+  border-radius: 10px;
+  padding: 5px 7px;
+  font-size: 15px;
+  color: white;
+}
+.AddContact .form form .inputs input::-moz-placeholder, .AddContact .form form .inputs select::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.622);
+  font-size: 12px;
+}
+.AddContact .form form .inputs input::placeholder, .AddContact .form form .inputs select::placeholder {
+  color: rgba(255, 255, 255, 0.622);
+  font-size: 12px;
+}
+.AddContact .form form .inputs input[name=name] {
+  background-color: #87c38f;
+  border: 2px solid #6d6875;
+}
+.AddContact .form form .inputs input[name=name]:focus {
+  box-shadow: 0 0 5px 1px #87c38f;
+}
+.AddContact .form form .inputs input[name=family] {
+  background-color: #a2d2ff;
+  border: 2px solid #6d6875;
+}
+.AddContact .form form .inputs input[name=family]:focus {
+  box-shadow: 0 0 5px 1px #a2d2ff;
+}
+.AddContact .form form .inputs input[name=email] {
+  background-color: #ffafcc;
+  border: 2px solid #6d6875;
+}
+.AddContact .form form .inputs input[name=email]:focus {
+  box-shadow: 0 0 5px 1px #ffafcc;
+}
+.AddContact .form form .inputs input[name=phone] {
+  background-color: #ffd166;
+  border: 2px solid #6d6875;
+}
+.AddContact .form form .inputs input[name=phone]:focus {
+  box-shadow: 0 0 5px 1px #ffd166;
+}
+.AddContact .form form .inputs input[name=address] {
+  background-color: #cdb4db;
+  border: 2px solid #6d6875;
+}
+.AddContact .form form .inputs input[name=address]:focus {
+  box-shadow: 0 0 5px 1px #cdb4db;
+}
+.AddContact .form form .inputs input[name=about] {
+  background-color: #c9ada7;
+  border: 2px solid #6d6875;
+}
+.AddContact .form form .inputs input[name=about]:focus {
+  box-shadow: 0 0 5px 1px #c9ada7;
+}
+.AddContact .form form .inputs select[name=relation] {
+  background-color: #b08968;
+  border: 2px solid #6d6875;
+  color: rgba(255, 255, 255, 0.622);
+  font-size: 12px;
+}
+.AddContact .form form .inputs select[name=relation]:focus {
+  box-shadow: 0 0 5px 1px #b08968;
+  font-size: 15px !important;
+}
+.AddContact .form form .inputs select[name=sex] {
+  background-color: #2ec4b6;
+  border: 2px solid #6d6875;
+  color: rgba(255, 255, 255, 0.622);
+  font-size: 12px;
+}
+.AddContact .form form .inputs select[name=sex]:focus {
+  box-shadow: 0 0 5px 1px #2ec4b6;
+  font-size: 15px !important;
+}
+.AddContact .form form .create-back-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+.AddContact .form form .create-back-btn .create-btn {
+  width: 70px;
+  height: 70px;
+  border: 2px solid #6d6875;
+  border-radius: 50%;
+  background-color: #457b9d;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.AddContact .form form .create-back-btn .create-btn:hover {
+  background-color: #26678f;
+}
+.AddContact .form form .create-back-btn .back-btn {
+  font-size: 14px;
+  text-decoration: underline;
+  color: #e76f51;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.AddContact .form form .create-back-btn .back-btn:hover {
+  color: #d33a14;
+}/*# sourceMappingURL=Style.css.map */
